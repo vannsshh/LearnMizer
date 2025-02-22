@@ -1,0 +1,175 @@
+/* Overall Section Styling */
+.section-3 {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header and Text */
+.testimonials-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.flex-heading-col {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 20px;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.heading-3 {
+  font-size: 2.2em;
+  margin: 10px 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.small-heading {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.content-container {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.paragraph {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Slider Container */
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+  background-color: transparent;
+  border-radius: 15px;
+  border: 1px solid #333333;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 80px; 
+  padding-bottom: 30px;
+  min-height: 450px;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* Circular Image on Top */
+.card-image {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  background: #f4f4f4;
+}
+
+.student-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.student-name {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #d1c2c2;
+  margin: 10px 0 5px 0;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 1.2em;
+  color: #ddd;
+  margin: 0 2px;
+}
+
+.star.filled {
+  color: #ffd700;
+}
+
+.course-name {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #ebd4d4;
+  margin-bottom: 15px;
+}
+
+.student-review {
+  font-size: 1em;
+  color: #c7aeae;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .testimonials-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .flex-heading-col,
+  .content-container {
+    min-width: 100%;
+  }
+  .slide {
+    flex: 0 0 100%;
+    padding: 0;
+  }
+}

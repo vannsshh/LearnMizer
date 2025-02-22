@@ -1,0 +1,117 @@
+.header {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+/* Container styling */
+.container-3 {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  flex-flow: wrap;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  place-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+/* Logo styling */
+.link-block {
+  display: inline-block;
+}
+
+.image-8 {
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Right section styling */
+.div-block-16 {
+  justify-content: flex-end;
+  width: 79%;
+  display: flex;
+}
+
+/* Button styling */
+.header-cta {
+  background-color: var(--tomato);
+  border-radius: 13px;
+  padding: 19px 47px;
+  font-family: Lato, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Franchise button */
+.header-cta.franchise-btn {
+  border-radius: 10px;
+  padding: 10px 36px;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.header-cta.franchise-btn.initial-btn {
+  border: 2px solid var(--tomato);
+  background-color: #ff414100;
+  border-radius: 10px;
+  margin-right: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container-3 {
+    grid-template-columns: 1fr;
+    flex-direction: row;
+  }
+
+  .image-8 {
+    width: 60%;
+  }
+
+  .div-block-16 {
+    width: auto;
+  }
+
+  .header-cta {
+    font-size: 16px;
+    padding: 15px 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-3 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image-8 {
+    width: 70%;
+  }
+
+  .div-block-16 {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .header-cta {
+    font-size: 15px;
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-8 {
+    width: 80%;
+  }
+
+  .header-cta {
+    font-size: 14px;
+    padding: 10px 25px;
+  }
+}

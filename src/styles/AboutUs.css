@@ -1,0 +1,171 @@
+/* Section Padding */
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 0 20px;
+}
+
+/* Text Styling */
+.text-sm {
+  color: #fff;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Lato, sans-serif;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.text-sm.text-bold {
+  letter-spacing: 0;
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 58px;
+}
+
+/* Paragraph */
+.paragraph {
+  color: #7d8490;
+  text-align: left;
+  width: 68%;
+  margin-top: 15px;
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2rem;
+  display: block;
+}
+
+/* Grid Layout */
+.w-layout-grid.grid-7 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  margin-top: 30px;
+}
+
+/* Grid Items */
+.grid-item {
+  text-align: center;
+}
+
+/* Headings */
+.heading-2 {
+  color: #fff;
+  font-family: Lato, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+/* Counter Text */
+.counter-heading {
+  color: #5c5c5c;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Lato, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .w-layout-grid.grid-7 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+
+  .text-sm {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .text-sm.text-bold {
+    font-size: 50px;
+    line-height: 55px;
+  }
+
+  .paragraph {
+    width: 80%;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .w-layout-grid.grid-7 {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .text-sm {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .text-sm.text-bold {
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  .paragraph {
+    width: 90%;
+    font-size: 16px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heading-2 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .counter-heading {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-sm {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .text-sm.text-bold {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .paragraph {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .heading-2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .counter-heading {
+    font-size: 25px;
+    margin: 15px 50px;
+  }
+
+  .w-layout-grid.grid-7 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

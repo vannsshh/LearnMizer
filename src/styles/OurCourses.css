@@ -1,0 +1,212 @@
+.section-2.learn-from-us {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 0 20px;
+}
+
+/* Headings */
+.heading-3 {
+  color: #fff;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Lato, sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 50px;
+}
+
+.heading-3.text-bold {
+  font-size: 69px;
+  font-weight: 700;
+  line-height: 69px;
+}
+
+.heading-3.small-heading {
+  color: #ffffff75;
+  margin-top: 10px;
+  font-size: 29px;
+  line-height: 29px;
+}
+
+/* Grid Layout */
+.w-layout-grid.grid-8 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  margin-top: 12% !important;
+}
+
+/* Course Card */
+.div-block {
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  background-color: #ffffff12;
+  border: 2px solid #ffffff0f;
+  border-radius: 20px;
+  padding: 27px 29px;
+  text-align: center;
+}
+
+.image-3 {
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  margin: -90px 0 0;
+}
+
+/* Course Title */
+.paragraph-2 {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  padding-top: 25px;
+  font-family: Lato, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+/* Course Info */
+.div-block-2 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.paragraph-3 {
+  color: #fff;
+  margin-bottom: 0;
+  margin-left: 12px;
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+}
+
+.text-span {
+  color: var(--goldenrod);
+  font-weight: 700;
+}
+
+.image-4 {
+  margin-left: 11px;
+}
+
+/* Enroll Button */
+.border-cta {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: #ffffff05;
+  border: 1px solid #ffffff14;
+  border-radius: 13px;
+  padding: 18px 46px;
+  font-family: Lato, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  position: relative;
+}
+
+.border-cta.full-width {
+  text-align: center;
+  width: 100%;
+  margin-top: 31px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .w-layout-grid.grid-8 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+
+  .heading-3 {
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  .heading-3.text-bold {
+    font-size: 55px;
+    line-height: 60px;
+  }
+
+  .heading-3.small-heading {
+    font-size: 25px;
+  }
+
+  .paragraph-2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .w-layout-grid.grid-8 {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .heading-3 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .heading-3.text-bold {
+    font-size: 45px;
+    line-height: 50px;
+  }
+
+  .heading-3.small-heading {
+    font-size: 22px;
+  }
+
+  .paragraph-2 {
+    font-size: 20px;
+  }
+
+  .border-cta {
+    padding: 15px 40px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-3 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  .heading-3.text-bold {
+    font-size: 38px;
+    line-height: 45px;
+  }
+
+  .heading-3.small-heading {
+    font-size: 20px;
+  }
+
+  .paragraph-2 {
+    font-size: 18px;
+  }
+
+  .border-cta {
+    padding: 14px 35px;
+    font-size: 16px;
+  }
+
+  .w-layout-grid.grid-8 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .div-block {
+    padding: 20px;
+  }
+}
