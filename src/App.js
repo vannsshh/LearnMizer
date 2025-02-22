@@ -621,7 +621,7 @@ export default function App() {
 
       {/* Footer Section */}
 
-      <Footer />
+      <Footer /> 
 
       {/* <div className="section-3 footer">
         <div className="container container-3 footer-container w-container">
