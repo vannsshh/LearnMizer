@@ -1,7 +1,14 @@
+.hexagon-background {
+  position: absolute;
+  top: -18%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Send it to the back */
+}
+
 .hero-section {
-  width: 100vw;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  position: relative;
   overflow: hidden;
 }
 
@@ -14,8 +21,9 @@
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 170px !important;
   display: block;
-  overflow: visible;
+  /* overflow: visible; */
 }
 
 .grad-tagline {
@@ -73,7 +81,6 @@
 .paragraph.center-align-text {
   text-align: center;
   margin: 20px auto;
-
 }
 
 .w-layout-grid.grid-2 {
@@ -141,13 +148,33 @@
   padding-bottom: 56.25%;
 }
 
-.container-2 {
-  opacity: 0.06;
+.brand-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+  padding: 40px 0;
 }
 
-.image-2 {
-  width: 100%;
-  margin: 10% 20px !important;
+.slider-track {
+  display: flex;
+  gap: 73px; 
+  animation: scroll 10s linear infinite;
+}
+
+.brand-logo {
+  width: 250px; 
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-90%);
+  }
 }
 
 /* Responsive Design */
@@ -225,8 +252,6 @@
   .div-block-12 {
     inset: 15vw 0% auto auto;
   }
-
-  
 }
 
 /* Large devices (desktops, 992px and up) */
