@@ -3,13 +3,13 @@
   top: -18%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: -1; /* Send it to the back */
 }
 
 .hero-section {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .container {
