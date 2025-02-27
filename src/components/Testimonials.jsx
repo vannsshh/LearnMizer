@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "../styles/Testimonials.css";
 
 const Testimonials = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,  // Animation duration in milliseconds
+            easing: "ease-in-out", // Smooth animation effect
+            once: true, // Animation happens only once while scrolling
+        });
+    }, []);
+
     const reviews = [
         {
             id: 1,
@@ -59,76 +69,48 @@ const Testimonials = () => {
         },
     ];
 
-    const visibleCards = 3;
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const totalSlides = reviews.length;
 
     useEffect(() => {
-        const maxSlideIndex = reviews.length - visibleCards;
         const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev < maxSlideIndex ? prev + 1 : 0));
-        }, 5000);
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+        }, 4000);
         return () => clearInterval(interval);
-    }, [reviews.length, visibleCards]);
+    }, [totalSlides]);
 
     const renderStars = (rating) => {
-        const stars = [];
-        for (let i = 1; i <= 5; i++) {
-            stars.push(
-                <span key={i} className={`star ${i <= rating ? "filled" : ""}`}>
-                    &#9733;
-                </span>
-            );
-        }
-        return stars;
+        return (
+            <div className="stars">
+                {[...Array(5)].map((_, i) => (
+                    <span key={i} className={`star ${i < rating ? "filled" : ""}`}>
+                        &#9733;
+                    </span>
+                ))}
+            </div>
+        );
     };
 
     return (
-        <div className="section-3 testimonials">
-            <div className="container w-container">
-                <div className="testimonials-flex">
-                    <div className="flex-content-col flex-heading-col">
-                        <h1 className="heading-3 left-text">What They Said!</h1>
-                        <h1 className="heading-3 text-bold left-text">Student Testimonials</h1>
-                        <h1 className="heading-3 small-heading left-text">We Add Value</h1>
-                    </div>
-                    <div className="flex-content-col content-container">
-                        <p className="paragraph full-width">
-                            Our students made it possible. They learned, then implemented.
-                            Now they are enjoying results.
-                        </p>
-                    </div>
-                </div>
-                {/* Slider Container */}
-                <div className="slider">
+        <div className="testimonials-section" data-aos="fade-up">
+            <div className="testimonials-header">
+                <h2>What They Said!</h2>
+                <h3>Student Testimonials</h3>
+                <span>We Add Value</span>
+            </div>
+            <div className="testimonials-slider">
+                {reviews.map((review, index) => (
                     <div
-                        className="slider-track"
-                        style={{
-                            transform: `translateX(-${currentSlide * (100 / visibleCards)}%)`,
-                        }}
+                        key={review.id}
+                        className={`testimonial-card ${index === currentIndex ? "active" : ""}`}
                     >
-                        {reviews.map((review) => (
-                            <div key={review.id} className="slide">
-                                <div className="testimonial-card">
-                                    <div className="card-image">
-                                        <img
-                                            src={review.image}
-                                            alt={`${review.name} profile`}
-                                            className="student-img"
-                                        />
-                                    </div>
-                                    <div className="card-content">
-                                        <div className="card-header">
-                                            <h2 className="student-name">{review.name}</h2>
-                                            <div className="star-rating">{renderStars(review.rating)}</div>
-                                        </div>
-                                        <h4 className="course-name">{review.course}</h4>
-                                        <p className="student-review">{review.review}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                        <img src={review.image} alt={review.name} className="testimonial-img" />
+                        <h4 className="testimonial-name">{review.name}</h4>
+                        <p className="testimonial-course">{review.course}</p>
+                        {renderStars(review.rating)}
+                        <p className="testimonial-review">{review.review}</p>
                     </div>
-                </div>
+                ))}
             </div>
         </div>
     );

@@ -1,209 +1,211 @@
-
-
-.container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding: 0 20px;
-}
-
-/* Headings */
-.heading-3 {
+.courses-section {
+  text-align: center;
   color: #fff;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: Lato, sans-serif;
-  font-size: 50px;
-  font-weight: 300;
-  line-height: 50px;
+  padding: 70px 0;
 }
 
-.heading-3.text-bold {
-  font-size: 69px;
-  font-weight: 700;
-  line-height: 69px;
+.section-title {
+  font-size: 3.5em;
+  font-weight: lighter;
+  margin-bottom: -10px;
 }
 
-.heading-3.small-heading {
-  color: #ffffff75;
-  margin-top: 10px;
-  font-size: 29px;
-  line-height: 29px;
+.section-subtitle {
+  font-size: 5em;
+  font-weight: bold;
 }
 
-/* Grid Layout */
-.w-layout-grid.grid-8 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
-  margin-top: 12% !important;
+.section-tagline {
+  font-size: 2em;
+  font-weight: lighter;
+  color: #62666d;
 }
 
-/* Course Card */
-.div-block {
-  -webkit-backdrop-filter: blur(9px);
-  backdrop-filter: blur(9px);
-  background-color: #ffffff12;
-  border: 2px solid #ffffff0f;
-  border-radius: 20px;
-  padding: 27px 29px;
-  text-align: center;
-}
-
-.image-3 {
+.courses-slider-container {
   width: 100%;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  margin: -90px 0 0;
-}
-
-/* Course Title */
-.paragraph-2 {
-  color: #fff;
-  text-align: center;
-  letter-spacing: 1px;
-  padding-top: 25px;
-  font-family: Lato, sans-serif;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 2rem;
-}
-
-/* Course Info */
-.div-block-2 {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.paragraph-3 {
-  color: #fff;
-  margin-bottom: 0;
-  margin-left: 12px;
-  font-family: Lato, sans-serif;
-  font-size: 16px;
-}
-
-.text-span {
-  color: var(--goldenrod);
-  font-weight: 700;
-}
-
-.image-4 {
-  margin-left: 11px;
-}
-
-/* Enroll Button */
-.border-cta {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: #ffffff05;
-  border: 1px solid #ffffff14;
-  border-radius: 13px;
-  padding: 18px 46px;
-  font-family: Lato, sans-serif;
-  font-size: 19px;
-  font-weight: 700;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 20px 0;
   position: relative;
 }
 
-.border-cta.full-width {
-  text-align: center;
-  width: 100%;
-  margin-top: 31px;
+.courses-slider-track {
+  display: flex;
+  gap: 30px;
+  animation: scrollCourses 15s infinite linear;
+  width: calc(100% * 2);
 }
 
-/* RESPONSIVE DESIGN */
+.course-card {
+  background: #222832;
+  padding: 20px;
+  margin-top: 100px !important;
+  margin-bottom: 50px !important;
+  border-radius: 10px;
+  text-align: center;
+  flex: 0 0 auto;
+  width: 350px;
+  min-height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+.course-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-top: -95px;
+  border-radius: 18px 18px 0 0;
+}
+
+.course-title {
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
+.course-info {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.info-icon {
+  color: #007bff;
+}
+
+.enroll-button {
+  display: block;
+  margin-top: 30px;
+  padding: 10px 25px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.enroll-button:hover {
+  background-color: #0056b3;
+}
+
+.view-all-button {
+  background-color: #ff4141;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 18px 40px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes scrollCourses {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
-  .w-layout-grid.grid-8 {
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+  .courses-slider-track {
+    width: calc(100% * 3);
   }
 
-  .heading-3 {
-    font-size: 40px;
-    line-height: 45px;
+  .section-title {
+    font-size: 2.5em;
   }
 
-  .heading-3.text-bold {
-    font-size: 55px;
-    line-height: 60px;
+  .section-subtitle {
+    font-size: 3.5em;
   }
 
-  .heading-3.small-heading {
-    font-size: 25px;
+  .section-tagline {
+    font-size: 1.5em;
   }
 
-  .paragraph-2 {
-    font-size: 22px;
+  .course-card {
+    width: 280px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .course-image {
+    height: 150px;
   }
 }
 
 @media (max-width: 768px) {
-  .w-layout-grid.grid-8 {
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+  .courses-slider-track {
+    width: calc(100% * 5);
+  }
+  
+  .course-card {
+    width: 250px;
   }
 
-  .heading-3 {
-    font-size: 35px;
-    line-height: 40px;
+  .section-title {
+    font-size: 2em;
+    margin-bottom: 0;
   }
 
-  .heading-3.text-bold {
-    font-size: 45px;
-    line-height: 50px;
+  .section-subtitle {
+    font-size: 2.8em;
   }
 
-  .heading-3.small-heading {
-    font-size: 22px;
+  .section-tagline {
+    font-size: 1.5em;
   }
 
-  .paragraph-2 {
-    font-size: 20px;
-  }
-
-  .border-cta {
-    padding: 15px 40px;
+  .view-all-button {
     font-size: 18px;
+    padding: 15px 30px;
   }
 }
 
 @media (max-width: 480px) {
-  .heading-3 {
-    font-size: 30px;
-    line-height: 35px;
+  .courses-section {
+    padding: 0;
   }
 
-  .heading-3.text-bold {
-    font-size: 38px;
-    line-height: 45px;
+  .courses-slider-track {
+    width: calc(100% * 6);
   }
 
-  .heading-3.small-heading {
-    font-size: 20px;
+  .course-card {
+    width: 250px;
+    margin-top: 80px;
   }
 
-  .paragraph-2 {
-    font-size: 18px;
+  .section-title {
+    font-size: 1em;
   }
 
-  .border-cta {
-    padding: 14px 35px;
+  .section-subtitle {
+    font-size: 2.2em;
+  }
+
+  .section-tagline {
+    font-size: 1em;
+  }
+
+  .view-all-button {
     font-size: 16px;
-  }
-
-  .w-layout-grid.grid-8 {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .div-block {
-    padding: 20px;
+    padding: 12px 25px;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import * as THREE from "three";
 
 const HeroAnimation = () => {
@@ -21,7 +21,7 @@ const HeroAnimation = () => {
         renderer.domElement.style.width = "100vw";
         renderer.domElement.style.height = "100vh";
         renderer.domElement.style.zIndex = "-1";
-        renderer.domElement.style.opacity = "0.3";
+        renderer.domElement.style.opacity = "2";
         document.body.appendChild(renderer.domElement);
 
         // Custom Shader Material for water-flow glow effect
@@ -124,7 +124,7 @@ const HeroAnimation = () => {
         window.addEventListener("mousemove", onMouseMove);
 
         // Animation Loop
-        const scrollSpeed = 0.02; // Adjust speed for smoother scrolling
+        const scrollSpeed = 0.02;
 
         const animate = () => {
             requestAnimationFrame(animate);
@@ -179,7 +179,7 @@ const HeroAnimation = () => {
         };
     }, []);
 
-    return null;
+    return;
 };
 
 export default HeroAnimation;

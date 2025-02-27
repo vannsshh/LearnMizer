@@ -1,35 +1,47 @@
-import React from "react";
-import "../styles/AboutUs.css"
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "../styles/AboutUs.css";
+import useCounter from "../hooks/useCounter";
 
 const AboutUs = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,  // Animation duration in milliseconds
+            easing: "ease-in-out", // Smooth animation effect
+            once: true, // Animation happens only once while scrolling
+        });
+    }, []);
+
+    const courses = useCounter(0, 10, 100000);
+    const lessons = useCounter(0, 600, 150000);
+    const videoHours = useCounter(0, 1500, 200000);
+
     return (
-        <div data-w-id="0c4c9ce8-5a85-82a9-e51b-e7dfefe0cef4" className="section">
-            <div className="container w-container">
-                <h1 data-w-id="4fd32b8a-1c68-8036-1bd5-a2f938d9d209" className="text-sm">
-                    Teaching Practical Knowledge to Transform You
-                </h1>
-                <h2 data-w-id="0577cde8-cc74-de49-adcb-ffc54668c08a" className="text-sm text-bold">
-                    From Dreamer to Achiever
-                </h2>
-                <p data-w-id="972fc89e-03a9-dab3-50e2-87dbdfe0d80f" className="paragraph">
-                    Throughout our life, we learn many things, but only a few work for our careers. Learnmizer is dedicated to teaching and disclosing skills that help you to grow in your professional life.
+        <section className="about-section" data-aos="fade-right">
+            <div className="about-container">
+                <h1 className="about-title">Teaching Practical Knowledge to Transform You</h1>
+                <h2 className="about-subtitle">From Dreamer to Achiever</h2>
+                <p className="about-description">
+                    Throughout our life, we learn many things, but only a few work for our careers.
+                    Learnmizer is dedicated to teaching and disclosing skills that help you to grow in your professional life.
                 </p>
-                <div data-w-id="6b8ba740-16f1-9d7d-596e-dbdf2c116cdf" className="w-layout-grid grid-7">
-                    <div className="grid-item">
-                        <h4 className="heading-2">10+</h4>
-                        <p className="counter-heading">Courses</p>
+                <div className="about-grid">
+                    <div className="about-item">
+                        <h4 className="about-count" data-count="10">{courses}+</h4>
+                        <p className="about-label">Courses</p>
                     </div>
-                    <div className="grid-item">
-                        <h4 className="heading-2">600+</h4>
-                        <p className="counter-heading">Lessons</p>
+                    <div className="about-item">
+                        <h4 className="about-count" data-count="600">{lessons}+</h4>
+                        <p className="about-label">Lessons</p>
                     </div>
-                    <div className="grid-item">
-                        <h4 className="heading-2">1500+</h4>
-                        <p className="counter-heading">Video Hours</p>
+                    <div className="about-item">
+                        <h4 className="about-count" data-count="1500">{videoHours}+</h4>
+                        <p className="about-label">Video Hours</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
