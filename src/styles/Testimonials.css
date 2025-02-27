@@ -39,6 +39,7 @@
 .testimonial-card {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  width: 100%;
   position: absolute;
   background: rgba(255, 255, 255, 0.1); /* Light transparent background */
   backdrop-filter: blur(10px); /* Frosted Glass Effect */
