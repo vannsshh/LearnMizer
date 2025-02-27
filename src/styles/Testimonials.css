@@ -37,11 +37,9 @@
 }
 
 .testimonial-card {
-  flex: 0 0 100%;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   position: absolute;
-  max-width: 1500px;
   background: rgba(255, 255, 255, 0.1); /* Light transparent background */
   backdrop-filter: blur(10px); /* Frosted Glass Effect */
   border-radius: 15px;
