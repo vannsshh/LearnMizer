@@ -84,16 +84,16 @@ const AllCourses = () => {
                 </div>
             </div>
 
-            <div className="courses-container">
+            <div className="all-courses-container">
                 {courses.map(course => (
-                    <div className="course-card" key={course.id}>
-                        <img src={course.image} alt={course.title} className="course-image" />
-                        <h2 className="course-title">{course.title}</h2>
-                        <div className="course-info">
-                            <p className="course-details"><FaBookOpen className="icon" />{course.lessons} Lessons</p>
-                            <p className="course-details"><FaClock className="icon" />{course.duration} Hours</p>
+                    <div className="all-courses-card" key={course.id}>
+                        <img src={course.image} alt={course.title} className="all-course-image" />
+                        <h2 className="all-course-title">{course.title}</h2>
+                        <div className="all-course-info">
+                            <p className="all-course-details"><FaBookOpen className="all-course-icon" />{course.lessons} Lessons</p>
+                            <p className="all-course-details"><FaClock className="all-course-icon" />{course.duration} Hours</p>
                         </div>
-                        <div className="course-footer">
+                        <div className="all-course-footer">
                             <button className="join-button">Join Our Class</button>
                             <p className="course-price">${course.price}</p>
                         </div>

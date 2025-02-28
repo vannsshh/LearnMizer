@@ -35,29 +35,31 @@
   border-radius: 10px;
 }
 
-.courses-container {
+.all-courses-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 40px;
 }
 
-.course-card {
+.all-courses-card {
   width: 100%;
   height: auto;
+  margin-bottom: 30px;
   border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-align: center;
   position: relative;
   padding-bottom: 15px;
 }
 
-.course-card:hover {
+.all-courses-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.course-image {
+.all-course-image {
   width: 100%;
   height: 220px;
   object-fit: cover;
@@ -65,36 +67,37 @@
   border-top-right-radius: 12px;
 }
 
-.course-title {
+.all-course-title {
   color: #e9d8d8;
   font-size: 20px;
   font-weight: bold;
   margin: 25px 10px;
 }
 
-.course-info {
+.all-course-info {
   display: flex;
+  justify-content: center;
   gap: 20px;
   align-items: center;
   margin-top: 10px;
 }
 
-.course-details {
+.all-course-details {
   font-size: 16px;
   color: #dfcaca;
 }
 
-.icon {
+.all-course-icon {
   color: #a7bdd4;
   margin-right: 10px;
 }
 
-.course-footer {
+.all-course-footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 25px;
-  margin-top: 20px;
+  gap: 20px;
+  margin: 10px;
 }
 
 .course-price {
@@ -123,7 +126,7 @@
 
 /* 🔽 RESPONSIVE STYLES 🔽 */
 @media (max-width: 1024px) {
-  .courses-container {
+  .all-courses-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
@@ -133,11 +136,11 @@
     padding: 15px 30px;
   }
 
-  .course-title {
+  .all-course-title {
     font-size: 18px;
   }
 
-  .course-info {
+  .all-course-info {
     font-size: 14px;
   }
 
@@ -148,7 +151,7 @@
 }
 
 @media (max-width: 768px) {
-  .courses-container {
+  .all-courses-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 20px;
@@ -163,16 +166,16 @@
     padding: 10px 20px;
   }
 
-  .course-title {
+  .all-course-title {
     font-size: 16px;
   }
 
-  .course-info {
+  .all-course-info {
     gap: 20px;
   }
 
-  .course-footer {
-    gap: 25px;
+  .all-course-footer {
+    gap: 20px;
   }
 
   .join-button {
@@ -183,9 +186,10 @@
 }
 
 @media (max-width: 570px) {
-  .courses-container {
+  .all-courses-container {
     grid-template-columns: repeat(1, 1fr);
   }
+  .all-course-footer{
+    flex-direction: column;
+  }
 }
-
-
