@@ -80,6 +80,10 @@
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
+  .about-section {
+    margin: 80px 40px !important;
+  }
+
   .about-title {
     font-size: 30px;
     line-height: 36px;
@@ -102,6 +106,10 @@
 }
 
 @media (max-width: 768px) {
+  .about-container {
+    margin: 100px 30px !important;
+  }
+
   .about-title {
     font-size: 28px;
     line-height: 34px;

@@ -28,21 +28,20 @@
   font-weight: lighter;
 }
 
-/* Slider */
 .testimonials-slider {
   display: flex;
   overflow: hidden;
   width: 100%;
-  position: relative;
+  justify-content: center;
+  gap: 20px; /* Space between two cards */
 }
 
 .testimonial-card {
+  width: 48%; /* Adjust width so that two cards fit */
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  width: 100%;
-  position: absolute;
-  background: rgba(255, 255, 255, 0.1); /* Light transparent background */
-  backdrop-filter: blur(10px); /* Frosted Glass Effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -51,7 +50,6 @@
 
 .testimonial-card.active {
   opacity: 1;
-  position: relative;
 }
 
 /* Image */
@@ -143,20 +141,23 @@
   .testimonials-header span {
     font-size: 22px;
   }
-  .testimonial-card {
-    padding: 20px;
-  }
   .testimonial-name {
     font-size: 22px;
   }
   .testimonial-review {
     font-size: 14px;
   }
+  .testimonials-slider {
+    flex-direction: column;
+  }
+  .testimonial-card {
+    padding: 20px;
+    width: 100%;
+  }
 }
 
 /* Small Phones */
 @media (max-width: 480px) {
-
   .testimonials-header h2 {
     font-size: 25px;
   }

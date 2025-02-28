@@ -6,9 +6,9 @@ import "../styles/Testimonials.css";
 const Testimonials = () => {
     useEffect(() => {
         AOS.init({
-            duration: 2000,  // Animation duration in milliseconds
-            easing: "ease-in-out", // Smooth animation effect
-            once: true, // Animation happens only once while scrolling
+            duration: 2000,
+            easing: "ease-in-out",
+            once: true,
         });
     }, []);
 
@@ -33,21 +33,21 @@ const Testimonials = () => {
         },
         {
             id: 3,
-            name: "Amit Patel",
-            course: "UI/UX Design",
-            review:
-                "I loved the interactive sessions and the creative assignments that pushed my boundaries. The curriculum was comprehensive and practical, making the entire learning experience both fun and informative. The feedback and peer reviews helped me polish my skills, and I now feel confident to take on design challenges professionally.",
-            rating: 4,
-            image: "https://i.pinimg.com/736x/6b/be/47/6bbe47ef7d09cbd0b708cd8ae1e7c106.jpg"
-        },
-        {
-            id: 4,
             name: "Sneha Gupta",
             course: "Digital Marketing",
             review:
                 "The course offered an in-depth look at digital marketing strategies and hands-on campaigns. It was structured to build confidence through practical assignments, and the case studies provided real-world insights. I now have a better understanding of how to leverage digital platforms for effective marketing.",
             rating: 5,
             image: "https://i.pinimg.com/736x/36/f0/c6/36f0c69fccfd2113b617c371f0969dfe.jpg"
+        },
+        {
+            id: 4,
+            name: "Amit Patel",
+            course: "UI/UX Design",
+            review:
+                "I loved the interactive sessions and the creative assignments that pushed my boundaries. The curriculum was comprehensive and practical, making the entire learning experience both fun and informative. The feedback and peer reviews helped me polish my skills, and I now feel confident to take on design challenges professionally.",
+            rating: 4,
+            image: "https://i.pinimg.com/736x/6b/be/47/6bbe47ef7d09cbd0b708cd8ae1e7c106.jpg"
         },
         {
             id: 5,
@@ -74,7 +74,7 @@ const Testimonials = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+            setCurrentIndex((prevIndex) => (prevIndex + 2) % totalSlides);
         }, 4000);
         return () => clearInterval(interval);
     }, [totalSlides]);
@@ -99,18 +99,24 @@ const Testimonials = () => {
                 <span>We Add Value</span>
             </div>
             <div className="testimonials-slider">
-                {reviews.map((review, index) => (
-                    <div
-                        key={review.id}
-                        className={`testimonial-card ${index === currentIndex ? "active" : ""}`}
-                    >
-                        <img src={review.image} alt={review.name} className="testimonial-img" />
-                        <h4 className="testimonial-name">{review.name}</h4>
-                        <p className="testimonial-course">{review.course}</p>
-                        {renderStars(review.rating)}
-                        <p className="testimonial-review">{review.review}</p>
-                    </div>
-                ))}
+                {reviews.map((review, index) => {
+                    // Only display reviews that fall into the current pair of indexes
+                    if (index === currentIndex || index === (currentIndex + 1) % totalSlides) {
+                        return (
+                            <div
+                                key={review.id}
+                                className={`testimonial-card ${index === currentIndex || index === (currentIndex + 1) % totalSlides ? "active" : ""}`}
+                            >
+                                <img src={review.image} alt={review.name} className="testimonial-img" />
+                                <h4 className="testimonial-name">{review.name}</h4>
+                                <p className="testimonial-course">{review.course}</p>
+                                {renderStars(review.rating)}
+                                <p className="testimonial-review">{review.review}</p>
+                            </div>
+                        );
+                    }
+                    return null;
+                })}
             </div>
         </div>
     );

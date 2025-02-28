@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaClock, FaBookOpen } from "react-icons/fa";
@@ -45,9 +46,9 @@ const courses = [
 const OurCourses = () => {
     useEffect(() => {
         AOS.init({
-            duration: 2000,  // Animation duration in milliseconds
-            easing: "ease-in-out", // Smooth animation effect
-            once: true, // Animation happens only once while scrolling
+            duration: 2000,  
+            easing: "ease-in-out", 
+            once: true,
         });
     }, []);
     return (
