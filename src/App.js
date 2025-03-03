@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import ScrollToTop from "./hooks/useScrollToTop";
-import HomePage from "./components/HomePage";  
-import AllCourses from "./components/AllCourses"; 
+import HomePage from "./components/HomePage";
+import AllCourses from "./components/AllCourses";
+import ExploreCourse from "./components/ExploreCourse";
 
 export default function App() {
   return (
@@ -32,15 +31,14 @@ export default function App() {
           rel="apple-touch-icon"
         />
 
-        <Header />
 
         {/* Define Routes for different pages */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/all-courses" element={<AllCourses />} />
+          <Route path="/courses/:id" element={<ExploreCourse />} />
         </Routes>
 
-        <Footer />
         <ScrollToTop />
       </>
     </Router>

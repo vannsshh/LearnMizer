@@ -6,10 +6,12 @@ import Testimonials from "./Testimonials";
 import LearnmizerVsOthers from "./LearnmizerVsOthers";
 import WhoWeAre from "./WhoWeAre";
 import OurFounder from "./OurFounder";
-
+import Header from "./Header";
+import Footer from "./Footer";
 export default function HomePage() {
     return (
         <>
+            <Header />
             <HeroSection />
             <AboutUs />
             <OurCourses />
@@ -17,6 +19,7 @@ export default function HomePage() {
             <LearnmizerVsOthers />
             <Testimonials />
             <OurFounder />
+            <Footer />
         </>
     );
 }
